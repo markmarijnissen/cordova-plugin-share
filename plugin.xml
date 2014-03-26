@@ -8,7 +8,7 @@ id="nl.madebymark.share"
     <license>Apache 2.0</license>
     <keywords>share,facebook,twitter</keywords>
     
-    <js-module src="www/Share.js" name="Share">
+    <js-module src="www/share.js" name="Share">
         <clobbers target="window.navigator.share" />
     </js-module>
     
