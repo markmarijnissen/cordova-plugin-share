@@ -15,6 +15,12 @@
         UIActivityViewController* activityViewController =
         [[UIActivityViewController alloc] initWithActivityItems:dataToShare
                                           applicationActivities:nil];
+
+        // fix crash on iOS8
+        if (IsAtLeastiOSVersion(@"8.0")) {
+            activityViewController.popoverPresentationController.sourceView = self.webView;
+        }
+
         [self.viewController presentViewController:activityViewController animated:YES completion:^{}];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
